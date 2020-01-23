@@ -18,14 +18,16 @@ class Automata:
     def lattice_input(self):
         for i in range(self.dim):
             for j in range(self.dim):
-                if (i < 15) and (i >= 5) and (j < 15) and (j >= 5):  #For a central square block
-                #if (i % 2 == 1) and (j % 2 == 1):                      #For an alternating grid
+                if (i < 15) and (i >= 5) and (j < 15) and (j >= 5):  # For a central square block
+                #if (i % 2 == 1) and (j % 2 == 1):                      # For an alternating grid
+                #if i == 10:                                            # For a line
                     self.lattice[i,j] = 1
                     self.newsites[i,j] = 1
         self.generate_lattice()
 
     def evolution(self):
         self.newsites = np.copy(self.lattice)
+        newfilled = []
         for i in range(self.dim):
             for j in range(self.dim):
                 neighbourcount = 0      # A simple model could depend on just the number of occupied neighbours
@@ -51,12 +53,12 @@ class Automata:
                         straightbelowcount += a
                     if element[1] == 1 and element[0] == 0:
                         straightabovecount += a
-                while counter <= len(emptyneighbourlist):
-                    if len(emptyneighbourlist) != 0:
-                        randcoordinate = random.randint(0,len(emptyneighbourlist) - 1)
+                if len(emptyneighbourlist) != 0:
+                    randcoordinate = random.randint(0,len(emptyneighbourlist) - 1)
+                    if [(i + emptyneighbourlist[randcoordinate][0]) % self.dim, (j + emptyneighbourlist[randcoordinate][1]) % self.dim] not in newfilled:
                         self.newsites[i, j] = 0
                         self.newsites[(i + emptyneighbourlist[randcoordinate][0]) % self.dim, (j + emptyneighbourlist[randcoordinate][1]) % self.dim] = 1
-                    counter += 1
+                        newfilled.append([(i + emptyneighbourlist[randcoordinate][0]) % self.dim, (j + emptyneighbourlist[randcoordinate][1]) % self.dim])
                 #if straightabovecount == 1 and straightbelowcount == 0:
                     #self.newsites[i,j] = 1
                 #if straightbelowcount == 1 and straightabovecount == 0:
