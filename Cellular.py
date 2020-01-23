@@ -2,36 +2,67 @@ import numpy as np
 import pylab
 import errno
 import os
+import random
 
 class Automata:
     def __init__(self):
         self.dim = 20
         self.lattice = np.zeros((self.dim, self.dim), dtype=np.float64)
+        self.newsites = np.zeros((self.dim, self.dim), dtype=np.float64)
         self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures'
         self.Totaltime = 10
         self.time = 0
+        self.nearestneighbourcoordinates = [[0,1],[0,-1],[1,0],[-1,0],[1,-1],[-1,1],[1,1],[-1,-1]]
 
 
     def lattice_input(self):
         for i in range(self.dim):
             for j in range(self.dim):
-                if (i < 15) and (i > 5) and (j < 15) and (j > 5):
+                if (i < 15) and (i >= 5) and (j < 15) and (j >= 5):  #For a central square block
+                #if (i % 2 == 1) and (j % 2 == 1):                      #For an alternating grid
                     self.lattice[i,j] = 1
+                    self.newsites[i,j] = 1
         self.generate_lattice()
 
     def evolution(self):
+        self.newsites = np.copy(self.lattice)
         for i in range(self.dim):
             for j in range(self.dim):
-                neighbourcount = 0
-                self.nearestneighbourcoordinates = [[i,j+1],[i,j-1],[i+1,j+1],[i+1,j-1],[i+1,j],[i-1,j+1],[i-1,j-1],[i-1,j]]
-                for coordinate in self.nearestneighbourcoordinates:
-                    if (coordinate[0]>=0) and (coordinate[1]>=0) and (coordinate[0]<self.dim) and (coordinate[1]<self.dim):
-                        neighbourcount += self.lattice[coordinate[0],coordinate[1]]
-                if neighbourcount == 2:
-                    self.lattice[i,j] = 1
-                elif neighbourcount <= 1:
-                    self.lattice[i,j] = 0
+                neighbourcount = 0      # A simple model could depend on just the number of occupied neighbours
+                belowcount = 0          # Other models may depend on the j coordinate of the neighbours
+                levelcount = 0
+                abovecount = 0
+                straightbelowcount = 0
+                straightabovecount = 0
+                emptyneighbourlist = []
+                counter = 0
+                for element in self.nearestneighbourcoordinates:
+                    a = self.lattice[(i + element[0]) % self.dim, (j + element[1]) % self.dim]  # Modulo self dim there to create periodic boundary conditions
+                    neighbourcount += a
+                    if a == 0 and self.lattice[i,j] == 1:
+                        emptyneighbourlist.append(element)
+                    if element[1] == -1:
+                        belowcount += a
+                    elif element[1] == 0:
+                        levelcount += a
+                    elif element[1] == 1:
+                        abovecount += a
+                    if element[1] == -1 and element[0] == 0:
+                        straightbelowcount += a
+                    if element[1] == 1 and element[0] == 0:
+                        straightabovecount += a
+                while counter <= len(emptyneighbourlist):
+                    if len(emptyneighbourlist) != 0:
+                        randcoordinate = random.randint(0,len(emptyneighbourlist) - 1)
+                        self.newsites[i, j] = 0
+                        self.newsites[(i + emptyneighbourlist[randcoordinate][0]) % self.dim, (j + emptyneighbourlist[randcoordinate][1]) % self.dim] = 1
+                    counter += 1
+                #if straightabovecount == 1 and straightbelowcount == 0:
+                    #self.newsites[i,j] = 1
+                #if straightbelowcount == 1 and straightabovecount == 0:
+                    #self.newsites[i,j] = 0
         self.time += 1
+        self.lattice = np.copy(self.newsites)
         if self.time <= 10:
             self.generate_lattice()
 
