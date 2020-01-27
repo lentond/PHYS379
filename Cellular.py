@@ -9,7 +9,7 @@ class Automata:               # Decided to use a class so that variables defined
         self.dim = 20         # Dimension of a square lattice
         self.lattice = np.zeros((self.dim, self.dim), dtype=np.float64)     # Defines an empty square lattice
         self.newsites = np.zeros((self.dim, self.dim), dtype=np.float64)    # Introduced so changes can be made, but earlier changes in each time step do not affect the others.
-        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures'   # Change to route where you want the pictures to be saved
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Cellular'   # Change to route where you want the pictures to be saved
         self.Totaltime = 20     # Change to time that lattice is run for
         self.time = 0
         self.nearestneighbourcoordinates = [[0,1],[0,-1],[1,0],[-1,0],[1,-1],[-1,1],[1,1],[-1,-1]]  #Defines the locations relative to each site that affect each site

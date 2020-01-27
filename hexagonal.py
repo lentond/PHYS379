@@ -15,11 +15,11 @@ class Automata:               # Decided to use a class so that variables defined
             for j in range(self.dim):
                 self.newvelocities[i,j] = []
                 self.velocitylattice[i, j] = []
-        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/FluidFlow'   # Change to route where you want the pictures to be saved
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Hexagonal'   # Change to route where you want the pictures to be saved
         self.Totaltime = 20     # Change to time that lattice is run for
         self.time = 0
-        self.nextcoordinates = [[0,0],[0,1],[0,-1],[1,0],[-1,0],[1,-1],[-1,1],[1,1],[-1,-1]]  #Defines the locations relative to each site that affect each site
-
+        self.evennextcoordinates = [[0, 0], [1, 0], [-1, 0], [0, 1], [-1, 1], [0, -1], [-1, -1]]
+        self.oddnextcoordinates = [[0, 0], [1, 0], [-1, 0], [1, 1], [0, 1], [1, -1], [0, -1]]
 
     def lattice_input(self):        # Function sets up the initial configuration of the lattice
         for i in range(self.dim):       # Iterating over each lattice site
@@ -29,7 +29,7 @@ class Automata:               # Decided to use a class so that variables defined
                 #if i == 10:                                            # For a line
                     self.lattice[i,j] = 1
                     self.newsites[i,j] = 1
-                    velgenerator = random.randint(0,8)
+                    velgenerator = random.randint(0,6)
                     self.velocitylattice[i,j].append(velgenerator)
                     self.newvelocities[i,j].append(velgenerator)
         self.generate_lattice()
@@ -47,7 +47,11 @@ class Automata:               # Decided to use a class so that variables defined
                 while counter < len(vel):
                     vel[counter] = self.velocitylattice[i, j][counter]
                     velnew[counter] = self.rule(vel)[counter]
-                    next[counter] = self.nextcoordinates[velnew[counter]]
+                    if j % 2 == 0:
+                        next[counter] = self.evennextcoordinates[velnew[counter]]
+                    if j % 2 == 1:
+                        next[counter] = self.oddnextcoordinates[velnew[counter]]
+                    print(next[counter])
                     inew[counter] = (i+next[counter][0]) % (self.dim)
                     jnew[counter] = (j+next[counter][1]) % (self.dim)
                     #print(jnew)
@@ -74,10 +78,15 @@ class Automata:               # Decided to use a class so that variables defined
             for j in range(self.dim):
                 a = self.lattice[i,j]
                 if a >= 1:
-                    pylab.plot([i], [j], '.', color='c')    # Occupied sites are blue circles
+                    if j % 2 == 0:
+                        pylab.plot([i], [j], '.', color='c')    # Occupied sites are blue circles
+                    if j % 2 == 1:
+                        pylab.plot([i+1/2], [j], '.', color='c')
                 if a == 0:
-                    pylab.plot([i], [j], 'x', color='r')    # Unoccupied sites are blue circles
-
+                    if j % 2 == 0:
+                        pylab.plot([i], [j], 'x', color='r')  # Occupied sites are red crosses
+                    if j % 2 == 1:
+                        pylab.plot([i + 1 / 2], [j], 'x', color='r')
 
         axes = pylab.gca()
         axes.set_xlim([-5, 25])
