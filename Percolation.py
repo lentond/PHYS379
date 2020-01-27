@@ -65,7 +65,7 @@ class Percolation:
                 if a == 1:
                     pylab.plot([i], [j], '.', color='c')    # Occupied sites are blue circles
                 if a == 0:
-                    pylab.plot([i], [j], 'x', color='r')    # Unoccupied sites are blue circles
+                    pylab.plot([i], [j], 'x', color='r')    # Unoccupied sites are red crosses
 
         axes = pylab.gca()
         axes.set_xlim([-5, 25])
