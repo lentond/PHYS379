@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6de404cf-ad45-47cf-b343-ca9f9a087199" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/FluidFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/FluidFlow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Percolation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Percolation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/10picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/10picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/11picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/11picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/12picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/12picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/13picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/13picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/14picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/14picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/15picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/15picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/16picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/16picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/17picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/17picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/18picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/18picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/19picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/19picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/1picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/1picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/20picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/20picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/2picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/2picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/3picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/3picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/4picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/4picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/5picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/5picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/6picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/6picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/7picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/7picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/8picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/8picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/9picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/9picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Percolation/picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Percolation/picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
