@@ -38,27 +38,28 @@ class Automata:               # Decided to use a class so that variables defined
         self.newsites = np.copy(self.lattice)
         for i in range(self.dim):               # Iterating over each site in the lattice
             for j in range(self.dim):
-                next = [0,0,0,0]
-                inew = [0,0,0,0]
-                jnew = [0,0,0,0]
-                velnew = [0,0,0,0]
-                vel = self.velocitylattice[i,j]
-                counter = 0
-                while counter < len(vel):
-                    vel[counter] = self.velocitylattice[i, j][counter]
-                    velnew[counter] = self.rule(vel)[counter]
-                    next[counter] = self.nextcoordinates[velnew[counter]]
-                    inew[counter] = (i+next[counter][0]) % (self.dim)
-                    jnew[counter] = (j+next[counter][1]) % (self.dim)
-                    #print(jnew)
-                    self.newsites[inew[counter],jnew[counter]] += 1
-                    #print(self.newvelocities[i,j])
-                    del self.newvelocities[i,j][counter]
-                    #print(self.newvelocities[i, j])
-                    self.newvelocities[inew[counter], jnew[counter]].append(velnew[counter])
-                    #print(self.newvelocities[inew[counter], jnew[counter]])
-                    counter += 1
-                    self.newsites[i, j] -= 1
+                if self.lattice[i,j] >= 1:
+                    next = [0,0,0,0]
+                    inew = [0,0,0,0]
+                    jnew = [0,0,0,0]
+                    velnew = [0,0,0,0]
+                    vel = self.velocitylattice[i,j]
+                    counter = 0
+                    while counter < len(vel):
+                        vel[counter] = self.velocitylattice[i, j][counter]
+                        velnew[counter] = self.rule(vel)[counter]
+                        next[counter] = self.nextcoordinates[velnew[counter]]
+                        inew[counter] = (i+next[counter][0]) % (self.dim)
+                        jnew[counter] = (j+next[counter][1]) % (self.dim)
+                        #print(jnew)
+                        self.newsites[inew[counter],jnew[counter]] += 1
+                        #print(self.newvelocities[i,j])
+                        del self.newvelocities[i,j][counter]
+                        #print(self.newvelocities[i, j])
+                        self.newvelocities[inew[counter], jnew[counter]].append(velnew[counter])
+                        #print(self.newvelocities[inew[counter], jnew[counter]])
+                        counter += 1
+                        self.newsites[i, j] -= 1
 
         #print(self.lattice)
         self.time += 1

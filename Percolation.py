@@ -7,11 +7,11 @@ import errno
 class Percolation:
     def __init__(self):
         self.dim = 20
-        self.density = 0.9
+        self.density = 0.5
         self.lattice = np.zeros((self.dim, self.dim), dtype=int)
         self.totalsites = int((self.dim ** 2) * self.density)
         self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Percolation'  # Change to route where you want the pictures to be saved
-        self.nearestneighbourlist = [[0,1],[0,-1],[1,0],[-1,0]]
+        self.nearestneighbourlist = [[0,1],[0,-1],[1,0],[-1,0],[1,-1],[-1,1],[1,1],[-1,-1]]
 
     def distribution(self):
         for site in range(self.totalsites):
