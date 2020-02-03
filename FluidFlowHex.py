@@ -15,7 +15,7 @@ class Automata:               # Decided to use a class so that variables defined
             for j in range(self.dim):
                 self.newvelocities[i,j] = []
                 self.velocitylattice[i, j] = []
-        self.visualisation_output = '/Users/Jack/Documents/Code'   # Change to route where you want the pictures to be saved
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/JackFluid'   # Change to route where you want the pictures to be saved
         self.Totaltime = 20     # Change to time that lattice is run for
         self.time = 0
         self.evennextcoordinates = [[0, 0], [1, 0], [-1, 0], [0, 1], [-1, 1], [0, -1], [-1, -1]]
@@ -30,7 +30,7 @@ class Automata:               # Decided to use a class so that variables defined
                 #if i == 10:                                            # For a line
                     self.lattice[i,j] = 1
                     self.newsites[i,j] = 1
-                    velgenerator = random.randint(0,8)
+                    velgenerator = random.randint(0,6)
                     self.velocitylattice[i,j].append(velgenerator)
                     self.newvelocities[i,j].append(velgenerator)
         self.generate_lattice()
@@ -53,7 +53,6 @@ class Automata:               # Decided to use a class so that variables defined
                             next[counter] = self.evennextcoordinates[velnew[counter]]
                         if j % 2 == 1:
                             next[counter] = self.oddnextcoordinates[velnew[counter]]
-                        next[counter] = self.nextcoordinates[velnew[counter]]
                         inew[counter] = (i+next[counter][0]) % (self.dim)
                         jnew[counter] = (j+next[counter][1]) % (self.dim)
                         #print(jnew)
