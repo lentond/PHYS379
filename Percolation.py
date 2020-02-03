@@ -87,12 +87,12 @@ class Percolation:
             colourlist = ['b', 'g', 'r', 'c', 'm', 'y']
             if len(cluster) > 8:
                 for point in cluster:
-                    pylab.plot(point[0], point[1], '.', color=colourlist[colourcounter])    # Occupied sites are blue circles
+                    pylab.plot(point[0], point[1], '.', color=colourlist[colourcounter])
                     print(colourcounter)
                 colourcounter += 1
             else:
                 for point in cluster:
-                    pylab.plot(point[0], point[1], '.', color='k')    # Occupied sites are blue circle
+                    pylab.plot(point[0], point[1], '.', color='k')
 
 
         axes = pylab.gca()
