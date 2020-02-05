@@ -2,48 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6de404cf-ad45-47cf-b343-ca9f9a087199" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/0picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/10picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/11picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/12picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/13picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/14picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/15picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/16picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/17picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/18picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/19picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/1picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/20picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/2picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/3picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/4picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/5picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/6picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/7picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/8picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/JackFluid/9picture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Barriers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FluidFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/FluidFlow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FluidFlowHex.py" beforeDir="false" afterPath="$PROJECT_DIR$/FluidFlowHex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percolation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Percolation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/10picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/10picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/11picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/11picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/12picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/12picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/13picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/13picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/14picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/14picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/15picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/15picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/16picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/16picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/17picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/17picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/1picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/1picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/2picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/2picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/3picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/3picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/4picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/4picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/5picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/5picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/6picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/6picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/7picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/7picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/8picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/8picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/FluidFlow/9picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/FluidFlow/9picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/10picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/10picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/11picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/11picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/12picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/12picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/13picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/13picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/14picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/14picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/15picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/15picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/16picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/16picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/17picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/17picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/18picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/18picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/19picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/19picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/1picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/1picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/2picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/2picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/3picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/3picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/4picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/4picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/5picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/5picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/6picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/6picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/7picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/7picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/8picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/8picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/JackFluid/9picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/JackFluid/9picture.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,52 +34,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/14picture.png">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/11picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/8picture.png">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/13picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/0picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/1picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/2picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/3picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/4picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/5picture.png">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/14picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/7picture.png">
+        <entry file="file://$PROJECT_DIR$/Barriers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2550">
+              <caret line="174" column="76" selection-start-line="174" selection-start-column="76" selection-end-line="174" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/15picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/15picture.png">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/16picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/17picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/18picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/19picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Barriers/0picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -120,6 +104,7 @@
       <find>entry</find>
       <find>%</find>
       <find>print</find>
+      <find>20</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,6 +122,7 @@
         <option value="$PROJECT_DIR$/Testing.py" />
         <option value="$PROJECT_DIR$/FluidFlow.py" />
         <option value="$PROJECT_DIR$/FluidFlowHex.py" />
+        <option value="$PROJECT_DIR$/Barriers.py" />
       </list>
     </option>
   </component>
@@ -162,12 +148,6 @@
               <item name="PHYS379" type="462c0819:PsiDirectoryNode" />
               <item name="Pictures" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PHYS379" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHYS379" type="462c0819:PsiDirectoryNode" />
-              <item name="Pictures" type="462c0819:PsiDirectoryNode" />
-              <item name="JackFluid" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -181,10 +161,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -200,7 +180,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.FluidFlowHex">
+  <component name="RunManager" selected="Python.Barriers">
+    <configuration name="Barriers" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PHYS379" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Barriers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="FluidFlow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PHYS379" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -285,34 +286,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="hexagonal" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PHYS379" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hexagonal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Barriers" />
         <item itemvalue="Python.FluidFlowHex" />
         <item itemvalue="Python.FluidFlow" />
         <item itemvalue="Python.Testing" />
         <item itemvalue="Python.Percolation" />
-        <item itemvalue="Python.hexagonal" />
       </list>
     </recent_temporary>
   </component>
@@ -330,14 +310,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="769" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="771" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3338257" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3328424" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39767778" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -354,103 +334,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Percolation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Hexagonal/4picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Hexagonal/9picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/2picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/5picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/7picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/13picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/20picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/19picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/18picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/17picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/16picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/14picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/11picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/9picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/FluidFlow/0picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hexagonal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FluidFlow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="106" column="36" lean-forward="true" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Timedimension.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Hexagonal/5picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -469,16 +352,31 @@
     <entry file="file://$PROJECT_DIR$/Pictures/OneDimension/picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/6picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/20picture.png" />
+    <entry file="file://$PROJECT_DIR$/FluidFlow.py" />
+    <entry file="file://$PROJECT_DIR$/Percolation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1007">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/14picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/9picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/15picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/10picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/16picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/11picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/17picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/19picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/12picture.png">
@@ -487,44 +385,22 @@
     <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/13picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/FluidFlowHex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/20picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/19picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/18picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/17picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/16picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/15picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/14picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/7picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/8picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/0picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/10picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/1picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/11picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/18picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/0picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/2picture.png">
@@ -539,8 +415,91 @@
     <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/5picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/7picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/6picture.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/9picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/JackFluid/1picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FluidFlowHex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="141" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/1picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/2picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/3picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/4picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/5picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/6picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/7picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/8picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/9picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/10picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/12picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/16picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/17picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/18picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/19picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/0picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/11picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/13picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/15picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/14picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Barriers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="174" column="76" selection-start-line="174" selection-start-column="76" selection-end-line="174" selection-end-column="76" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

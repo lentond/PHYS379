@@ -7,7 +7,7 @@ import random
 class Automata:               # Decided to use a class so that variables defined in one function can be accessed from all others without having to pass them.
     def __init__(self):
         self.Totaltime = 20
-        self.dim = 20         # Dimension of a square lattice
+        self.dim = 21         # Dimension of a square lattice
         self.lattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=int)  # Defines an empty square lattice
         self.velocitylattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=list)
         for i in range(self.dim):
@@ -15,7 +15,7 @@ class Automata:               # Decided to use a class so that variables defined
                 for k in range(self.Totaltime):
                     self.velocitylattice[i, j, k] = []
 
-        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/JackFluid'   # Change to route where you want the pictures to be saved    # Change to time that lattice is run for
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Barriers'   # Change to route where you want the pictures to be saved    # Change to time that lattice is run for
         self.time = 0
         self.evennextcoordinates = [[0, 0], [1, 0], [-1, 0], [0, 1], [-1, 1], [0, -1], [-1, -1]]
         self.oddnextcoordinates = [[0, 0], [1, 0], [-1, 0], [1, 1], [0, 1], [1, -1], [0, -1]]
@@ -27,16 +27,22 @@ class Automata:               # Decided to use a class so that variables defined
                 if (i < 15) and (i >= 5) and (j < 15) and (j >= 5):  # For a central square block
                 #if (i % 2 == 1) and (j % 2 == 1):                      # For an alternating grid
                 #if i == 10:                                            # For a line
+                #if (i == 10) and (j == 10):
                     self.lattice[i,j,0] = 1
                     velgenerator = random.randint(0,6)
-                    self.velocitylattice[i,j,0].append(velgenerator)
+                    #self.velocitylattice[i,j,0].append(velgenerator)
+                    self.velocitylattice[i, j, 0].append(1)
+
+                if (j == 0) or (i == 0) or (j == self.dim - 1) or (i == self.dim - 1):
+                    for k in range(self.Totaltime):
+                        self.lattice[i, j, k] = -10
         self.evolution()
 
     def evolution(self):                        # Defines how lattice evolves at each time step
         while self.time < self.Totaltime - 1:
             for i in range(self.dim):               # Iterating over each site in the lattice
                 for j in range(self.dim):
-                    if self.lattice[i,j,self.time] >= 1:
+                    if self.lattice[i,j,self.time] != 0:
                         next = [0,0,0,0,0,0,0]
                         inew = [0,0,0,0,0,0,0]
                         jnew = [0,0,0,0,0,0,0]
@@ -44,19 +50,38 @@ class Automata:               # Decided to use a class so that variables defined
                         vel = self.velocitylattice[i,j,self.time]
                         counter = 0
                         while counter < len(vel):
-                            velnew[counter] = self.rule(vel)[counter]
-                            if j % 2 == 0:
-                                next[counter] = self.evennextcoordinates[velnew[counter]]
-                            if j % 2 == 1:
-                                next[counter] = self.oddnextcoordinates[velnew[counter]]
-                            inew[counter] = (i+next[counter][0]) % (self.dim)
-                            jnew[counter] = (j+next[counter][1]) % (self.dim)
-                            #print(jnew)
-                            self.lattice[inew[counter],jnew[counter], self.time + 1] += 1
-                            self.velocitylattice[inew[counter], jnew[counter], (self.time + 1)].append(velnew[counter])
+                            if self.lattice[i, j, self.time] >= 0:
+                                velnew[counter] = self.rule(vel)[counter]
+                                if j % 2 == 0:
+                                    next[counter] = self.evennextcoordinates[velnew[counter]]
+                                if j % 2 == 1:
+                                    next[counter] = self.oddnextcoordinates[velnew[counter]]
+                                inew[counter] = (i+next[counter][0]) % (self.dim)
+                                jnew[counter] = (j+next[counter][1]) % (self.dim)
+                                #print(jnew)
+                                self.lattice[inew[counter],jnew[counter], self.time + 1] += 1
+                                self.velocitylattice[inew[counter], jnew[counter], (self.time + 1)].append(velnew[counter])
+                            elif 0 > self.lattice[i, j, self.time] > -10:
+                                barrierside = ''
+                                if (j == 0):
+                                    barrierside += 'b'
+                                elif (j == self.dim - 1):
+                                    barrierside += 't'
+                                if (i == 0):
+                                    barrierside += 'l'
+                                elif (i == self.dim - 1):
+                                    barrierside += 'r'
+                                velnew[counter] = self.barrier(vel,barrierside)[counter]
+
+                                if j % 2 == 0:
+                                    next[counter] = self.evennextcoordinates[velnew[counter]]
+                                if j % 2 == 1:
+                                    next[counter] = self.oddnextcoordinates[velnew[counter]]
+                                inew[counter] = (i + next[counter][0]) % (self.dim)
+                                jnew[counter] = (j + next[counter][1]) % (self.dim)
+                                self.lattice[inew[counter], jnew[counter], self.time + 1] += 1
+                                self.velocitylattice[inew[counter], jnew[counter], (self.time + 1)].append(velnew[counter])
                             counter += 1
-                        print(velnew)
-                        print(vel)
             #print(self.lattice)
             self.time += 1
         if self.time == self.Totaltime - 1:
@@ -83,6 +108,11 @@ class Automata:               # Decided to use a class so that variables defined
                             pylab.plot([i], [j], 'x', color='r')  # Occupied sites are red crosses
                         if j % 2 == 1:
                             pylab.plot([i + 1 / 2], [j], 'x', color='r')
+                    if a < 0:
+                        if j % 2 == 0:
+                            pylab.plot([i], [j], 'x', color='k')  # Occupied sites are red crosses
+                        if j % 2 == 1:
+                            pylab.plot([i + 1 / 2], [j], 'x', color='k')
 
 
             axes = pylab.gca()
@@ -110,7 +140,7 @@ class Automata:               # Decided to use a class so that variables defined
                          '0100111': '0100111', '0011110': '0011110', '0011101': '0011101', '0011011': '0011011',
                          '0010111': '0010111', '0001111': '0111001', '0111110': '1101101', '0111101': '1011110',
                          '0111011': '1100111', '0110111': '1011011', '0101111': '1111010', '0011111': '1110101',
-                         '0111111': '0111111', '0000000':'0000000'}
+                         '0111111': '0111111', '0000000': '0000000'}
 
         dualcollisiondict = {}
         for key in collisiondict:
@@ -126,11 +156,10 @@ class Automata:               # Decided to use a class so that variables defined
             item = self.join(entrylist)
             dualcollisiondict.update({key: item})
 
-
         if len(vel) <= 1:
             return (vel)
         elif vel[0] == vel[1]:
-            return(vel)
+            return (vel)
         else:
             vel.sort()
             stringvel = self.veltobinary(vel)
@@ -140,6 +169,48 @@ class Automata:               # Decided to use a class so that variables defined
                 newstringvel = collisiondict[stringvel]
             newvel = self.binarytovel(newstringvel)
             return (newvel)
+
+    def barrier(self, vel, side):  # This is currently programmed s.t. angle of incidence = angle of reflection.
+                                    # Other options include just reversing velocity or randomising a direction, which could be
+                                    # Much easier for the percolation model.
+        newvel = []
+        print(vel)
+        print(side)
+        for vel in vel:
+            if vel == 1:
+                newvel.append(2)
+            if vel == 2:
+                newvel.append(1)
+            if side == 'l' or side == 'r':
+                if vel == 3:
+                    newvel.append(4)
+                if vel == 4:
+                    newvel.append(3)
+                if vel == 5:
+                    newvel.append(6)
+                if vel == 6:
+                    newvel.append(5)
+            if side == 't' or side == 'b':
+                if vel == 3:
+                    newvel.append(5)
+                if vel == 4:
+                    newvel.append(6)
+                if vel == 5:
+                    newvel.append(3)
+                if vel == 6:
+                    newvel.append(4)
+            if len(side) == 2:
+                if vel == 3:
+                    newvel.append(6)
+                if vel == 4:
+                    newvel.append(5)
+                if vel == 5:
+                    newvel.append(4)
+                if vel == 6:
+                    newvel.append(3)
+        print(newvel)
+        return(newvel)
+
 
     def split(self, word):
         return [int(char) for char in word]
