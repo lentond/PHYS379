@@ -4,29 +4,33 @@ import errno
 import os
 import random
 
-class Automata:               # Decided to use a class so that variables defined in one function can be accessed from all others without having to pass them.
+
+class Automata:
+
     def __init__(self):
         self.Totaltime = 20
         self.dim = 20
+        self.flowspeed = 1
+        self.scale = 4
         self.totalsites = int((self.dim ** 2))
         self.barrierdensity = 0.2
-        self.fluidparticledensity = 0.1
+        self.fluidparticledensity = 0.5
         self.fluidparticlenumber = int(self.fluidparticledensity * self.totalsites)
         self.barriersites = int(self.barrierdensity * self.totalsites)
-        self.lattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=int)  # Defines an empty square lattice
+        self.lattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=int)
         self.velocitylattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=list)
         for i in range(self.dim):
             for j in range(self.dim):
                 for k in range(self.Totaltime):
                     self.velocitylattice[i, j, k] = []
 
-        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Routes'   # Change to route where you want the pictures to be saved    # Change to time that lattice is run for
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Injections'
         self.time = 0
         self.evennextcoordinates = [[0, 0], [1, 0], [-1, 0], [0, 1], [-1, 1], [0, -1], [-1, -1]]
         self.oddnextcoordinates = [[0, 0], [1, 0], [-1, 0], [1, 1], [0, 1], [1, -1], [0, -1]]
 
 
-    def lattice_input(self):        # Function sets up the initial configuration of the lattice
+    def lattice_input(self):
 
         for site in range(self.barriersites):
             randomi = random.randint(0,self.dim - 1)
@@ -42,13 +46,14 @@ class Automata:               # Decided to use a class so that variables defined
                 self.lattice[i,j,0] = 1
                 velgenerator = random.randint(0,6)
                 self.velocitylattice[i, j, 0] = [velgenerator]
+                #self.velocitylattice[i, j, 0] = [1]
                 counter += 1
 
         self.evolution()
 
-    def evolution(self):                        # Defines how lattice evolves at each time step
+    def evolution(self):
         while self.time < self.Totaltime - 1:
-            for i in range(self.dim):               # Iterating over each site in the lattice
+            for i in range(self.dim):
                 for j in range(self.dim):
                     if self.lattice[i,j,self.time] != 0:
                         next = [0,0,0,0,0,0,0]
@@ -59,8 +64,6 @@ class Automata:               # Decided to use a class so that variables defined
                         counter = 0
                         while counter < len(vel):
                             if self.lattice[i, j, self.time] >= 0:
-                                print(vel)
-                                print(self.rule(vel))
                                 velnew[counter] = self.rule(vel)[counter]
 
                                 if j % 2 == 0:
@@ -69,7 +72,6 @@ class Automata:               # Decided to use a class so that variables defined
                                     next[counter] = self.oddnextcoordinates[velnew[counter]]
                                 inew[counter] = (i+next[counter][0]) % (self.dim)
                                 jnew[counter] = (j+next[counter][1]) % (self.dim)
-                                #print(jnew)
                                 self.lattice[inew[counter],jnew[counter], self.time + 1] += 1
                                 self.velocitylattice[inew[counter], jnew[counter], (self.time + 1)].append(velnew[counter])
                             elif 0 > self.lattice[i, j, self.time] > -10:
@@ -84,43 +86,91 @@ class Automata:               # Decided to use a class so that variables defined
                                 self.lattice[inew[counter], jnew[counter], self.time + 1] += 1
                                 self.velocitylattice[inew[counter], jnew[counter], (self.time + 1)].append(velnew[counter])
                             counter += 1
-            #print(self.lattice)
+            injections = int(((self.flowspeed*self.totalsites))/self.scale)
+            for injection in range(injections):
+                randomi = random.randint(0, self.dim - 1)
+                randomj = random.randint(0, self.dim - 1)
+                if self.lattice[randomi, randomj, self.time + 1] >= 1:
+                    if (2 in self.velocitylattice[randomi,randomj, self.time + 1]) & (1 not in self.velocitylattice[randomi,randomj, self.time + 1]):
+                        self.velocitylattice[randomi, randomj, self.time + 1].remove(2)
+                        self.velocitylattice[randomi, randomj, self.time + 1].append(1)
+                    if (4 in self.velocitylattice[randomi, randomj, self.time + 1]) & (3 not in self.velocitylattice[randomi, randomj, self.time + 1]):
+                        self.velocitylattice[randomi, randomj, self.time + 1].remove(4)
+                        self.velocitylattice[randomi, randomj, self.time + 1].append(3)
+                    if (6 in self.velocitylattice[randomi, randomj, self.time + 1]) & (5 not in self.velocitylattice[randomi, randomj, self.time + 1]):
+                        self.velocitylattice[randomi, randomj, self.time + 1].remove(6)
+                        self.velocitylattice[randomi, randomj, self.time + 1].append(5)
+                    if (0 in self.velocitylattice[randomi,randomj, self.time + 1]) & (1 not in self.velocitylattice[randomi,randomj, self.time + 1]):
+                        self.velocitylattice[randomi, randomj, self.time + 1].remove(0)
+                        self.velocitylattice[randomi, randomj, self.time + 1].append(1)
             self.time += 1
         if self.time == self.Totaltime - 1:
             self.generate_lattice()
 
-    def generate_lattice(self): # Produces a picture of the lattice using matplotlib.pyplot
+    def generate_lattice(self):
         for k in range(self.Totaltime):
             fig = pylab.figure()
-            for i in range(self.dim):   # Iterating over every site in the lattice
+            for i in range(self.dim):
                 for j in range(self.dim):
                     a = self.lattice[i,j,k]
                     if a >= 2:
                         if j % 2 == 0:
-                            pylab.plot([i], [j], '.', color='g')    # Occupied sites are blue circles
+                            pylab.plot([i], [j], '.', color='g')
                         elif j % 2 == 1:
                             pylab.plot([i+1/2], [j], '.', color='g')
                     if a == 1:
                         if j % 2 == 0:
-                            pylab.plot([i], [j], '.', color='c')    # Occupied sites are blue circles
+                            pylab.plot([i], [j], '.', color='c')
                         elif j % 2 == 1:
                             pylab.plot([i+1/2], [j], '.', color='c')
                     if a == 0:
                         if j % 2 == 0:
-                            pylab.plot([i], [j], 'x', color='r')  # Occupied sites are red crosses
+                            pylab.plot([i], [j], 'x', color='r')
                         elif j % 2 == 1:
                             pylab.plot([i + 1 / 2], [j], 'x', color='r')
                     if a < 0:
                         if j % 2 == 0:
-                            pylab.plot([i], [j], 'x', color='k')  # Occupied sites are red crosses
+                            pylab.plot([i], [j], 'x', color='k')
                         elif j % 2 == 1:
                             pylab.plot([i + 1 / 2], [j], 'x', color='k')
                     if -10 < a < 0:
                         if j % 2 == 0:
-                            pylab.plot([i], [j], '.', color='c')  # Occupied sites are red crosses
-                        if j % 2 == 1:
+                            pylab.plot([i], [j], '.', color='c')
+                        elif j % 2 == 1:
                             pylab.plot([i + 1 / 2], [j], '.', color='c')
 
+                    b = self.velocitylattice[i,j,k]
+
+                    if 1 in b:
+                        if j % 2 == 0:
+                            pylab.arrow(i, j, 1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
+                        elif j % 2 == 1:
+                            pylab.arrow(i + 1/2, j, 1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
+                    if 2 in b:
+                        if j % 2 == 0:
+                            pylab.arrow(i, j, -1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
+                        elif j % 2 == 1:
+                            pylab.arrow(i + 1/2, j, -1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
+                    if 3 in b:
+                        if j % 2 == 0:
+                            pylab.arrow(i, j, 1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                        elif j % 2 == 1:
+                            pylab.arrow(i + 1/2, j, 1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                    if 4 in b:
+                        if j % 2 == 0:
+                            pylab.arrow(i, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                        elif j % 2 == 1:
+                            pylab.arrow(i + 1/2, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                    if 5 in b:
+                        if j % 2 == 0:
+                            pylab.arrow(i, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                        elif j % 2 == 1:
+                            pylab.arrow(i + 1/2, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                    if 6 in b:
+                        if j % 2 == 0:
+                            pylab.arrow(i, j, -1/2, -1, length_includes_head=True, head_width=0.5, head_length=0.4)
+                        elif j % 2 == 1:
+                            pylab.arrow(i + 1/2, j, -1/2, -1, length_includes_head=True, head_width=0.5, head_length=0.4)
 
             axes = pylab.gca()
             axes.set_xlim([-5, self.dim + 5])
@@ -130,9 +180,9 @@ class Automata:               # Decided to use a class so that variables defined
             pylab.title('Filler Title')
             pylab.show
             self.check_path_exists(self.visualisation_output)
-            fig.savefig(self.visualisation_output + '/' + str(k) + 'picture.png')   # Saves picture
+            fig.savefig(self.visualisation_output + '/' + str(k) + 'picture.png')
 
-    def rule(self, vel):  # Here define the rule for velocities after collisions.
+    def rule(self, vel):
         collisiondict = {'0100000': '0100000', '0010000': '0010000', '0001000': '0001000', '0000100': '0000100',
                          '0000010': '0000010', '0000001': '0000001',
                          '0110000': '0001001', '0101000': '0101000', '0100100': '1001000', '0100010': '0100010',
@@ -177,9 +227,9 @@ class Automata:               # Decided to use a class so that variables defined
             newvel = self.binarytovel(newstringvel)
             return (newvel)
 
-    def barrier(self, vel):  # This is currently programmed s.t. angle of incidence = angle of reflection.
-                                    # Other options include just reversing velocity or randomising a direction, which could be
-                                    # Much easier for the percolation model.
+    def barrier(self, vel):
+
+
         newvel = []
         for vel in vel:
             if vel == 1:
@@ -194,7 +244,6 @@ class Automata:               # Decided to use a class so that variables defined
                 newvel.append(4)
             if vel == 6:
                 newvel.append(3)
-        print(newvel)
         return(newvel)
 
 
@@ -229,7 +278,7 @@ class Automata:               # Decided to use a class so that variables defined
         return (vel)
 
 
-    def check_path_exists(self, path):  # Function that checks the save path exists and if not, creates it
+    def check_path_exists(self, path):
         try:
             os.makedirs(path)
         except OSError as exception:
