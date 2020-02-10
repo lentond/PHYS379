@@ -2,29 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6de404cf-ad45-47cf-b343-ca9f9a087199" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Injections.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/0picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/0picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/10picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/10picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/11picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/11picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/12picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/12picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/13picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/13picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/14picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/14picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/15picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/15picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/16picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/16picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/17picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/17picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/18picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/18picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/19picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/19picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/1picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/1picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/2picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/2picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/3picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/3picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/4picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/4picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/5picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/5picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/6picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/6picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/7picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/7picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/8picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/8picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/Routes/9picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Routes/9picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Injections.py" beforeDir="false" afterPath="$PROJECT_DIR$/Injections.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percolation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Percolation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/0picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/0picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/10picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/10picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/11picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/11picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/12picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/12picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/13picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/13picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/14picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/14picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/15picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/15picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/16picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/16picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/17picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/17picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/18picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/18picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/19picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/19picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/1picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/1picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/2picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/2picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/3picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/3picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/4picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/4picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/5picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/5picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/6picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/6picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/7picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/7picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/8picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/8picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Injections/9picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Injections/9picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Percolation/picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Percolation/picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,52 +37,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/2picture.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/FluidFlowHex.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1025">
+              <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="141" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/3picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/4picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/6picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/7picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/8picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/10picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/13picture.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/15picture.png">
+        <entry file="file://$PROJECT_DIR$/Pictures/Injections/19picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Pictures/Injections/18picture.png">
+        <entry file="file://$PROJECT_DIR$/Injections.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Percolation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Injections/0picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Injections/1picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Hexagonal/0picture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pictures/Percolation/picture.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -99,13 +119,13 @@
       <find>rule</find>
       <find>newvelocities</find>
       <find>entry</find>
-      <find>%</find>
       <find>20</find>
       <find>&lt;</find>
       <find>density</find>
       <find>totalsite</find>
       <find>print</find>
       <find>#</find>
+      <find>%</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,12 +139,12 @@
         <option value="$PROJECT_DIR$/Onedimensional.py" />
         <option value="$PROJECT_DIR$/Timedimension.py" />
         <option value="$PROJECT_DIR$/hexagonal.py" />
-        <option value="$PROJECT_DIR$/Percolation.py" />
         <option value="$PROJECT_DIR$/Testing.py" />
         <option value="$PROJECT_DIR$/FluidFlow.py" />
         <option value="$PROJECT_DIR$/FluidFlowHex.py" />
         <option value="$PROJECT_DIR$/Barriers.py" />
         <option value="$PROJECT_DIR$/Routes.py" />
+        <option value="$PROJECT_DIR$/Percolation.py" />
         <option value="$PROJECT_DIR$/Injections.py" />
       </list>
     </option>
@@ -150,6 +170,12 @@
               <item name="PHYS379" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHYS379" type="462c0819:PsiDirectoryNode" />
               <item name="Pictures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHYS379" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHYS379" type="462c0819:PsiDirectoryNode" />
+              <item name="Pictures" type="462c0819:PsiDirectoryNode" />
+              <item name="Percolation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,27 +231,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FluidFlow" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PHYS379" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FluidFlow.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="FluidFlowHex" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PHYS379" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -268,6 +273,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Percolation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PHYS379" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Percolation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Routes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PHYS379" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -292,10 +318,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Injections" />
+        <item itemvalue="Python.Percolation" />
         <item itemvalue="Python.Routes" />
         <item itemvalue="Python.Barriers" />
         <item itemvalue="Python.FluidFlowHex" />
-        <item itemvalue="Python.FluidFlow" />
       </list>
     </recent_temporary>
   </component>
@@ -315,12 +341,12 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="769" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49889135" visible="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49889135" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" sideWeight="0.50110865" side_tool="true" visible="true" weight="0.25679544" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3338257" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3338257" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39734122" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -337,18 +363,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Pictures/Barriers/14picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -357,28 +371,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Percolation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Routes/14picture.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FluidFlowHex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="141" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Routes/11picture.png">
       <provider selected="true" editor-type-id="images" />
@@ -469,38 +463,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/19picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/16picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/5picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/9picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/11picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/12picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/14picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Injections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="104" column="87" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/0picture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/1picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/18picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/2picture.png">
@@ -512,6 +478,9 @@
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/4picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/5picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/6picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -521,17 +490,74 @@
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/8picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/9picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/10picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/11picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/12picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/13picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/14picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pictures/Injections/15picture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/Injections/18picture.png">
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/19picture.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Hexagonal/0picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FluidFlowHex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="141" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/0picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Injections/1picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Percolation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/picture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/clusterpicture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/Percolation/spanningpicture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Injections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

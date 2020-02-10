@@ -10,15 +10,18 @@ class Automata:
     def __init__(self):
         self.Totaltime = 20
         self.dim = 20
-        self.flowspeed = 1
-        self.scale = 4
+        self.flowspeed = 0.5
+        self.scale = 5
         self.totalsites = int((self.dim ** 2))
-        self.barrierdensity = 0.2
-        self.fluidparticledensity = 0.5
+        self.barrierdensity = 0.35
+        self.fluidparticledensity = 0.6
         self.fluidparticlenumber = int(self.fluidparticledensity * self.totalsites)
         self.barriersites = int(self.barrierdensity * self.totalsites)
         self.lattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=int)
         self.velocitylattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=list)
+        self.vxtotal = np.zeros((self.Totaltime), dtype = int)
+        self.injectedmomentum = np.zeros((self.Totaltime), dtype=int)
+        self.porosity = (self.totalsites - self.barriersites)/self.totalsites
         for i in range(self.dim):
             for j in range(self.dim):
                 for k in range(self.Totaltime):
@@ -55,6 +58,7 @@ class Automata:
         while self.time < self.Totaltime - 1:
             for i in range(self.dim):
                 for j in range(self.dim):
+
                     if self.lattice[i,j,self.time] != 0:
                         next = [0,0,0,0,0,0,0]
                         inew = [0,0,0,0,0,0,0]
@@ -86,7 +90,8 @@ class Automata:
                                 self.lattice[inew[counter], jnew[counter], self.time + 1] += 1
                                 self.velocitylattice[inew[counter], jnew[counter], (self.time + 1)].append(velnew[counter])
                             counter += 1
-            injections = int(((self.flowspeed*self.totalsites))/self.scale)
+
+            injections = int(((self.flowspeed*self.totalsites) - self.vxtotal[self.time])/self.scale)
             for injection in range(injections):
                 randomi = random.randint(0, self.dim - 1)
                 randomj = random.randint(0, self.dim - 1)
@@ -94,18 +99,55 @@ class Automata:
                     if (2 in self.velocitylattice[randomi,randomj, self.time + 1]) & (1 not in self.velocitylattice[randomi,randomj, self.time + 1]):
                         self.velocitylattice[randomi, randomj, self.time + 1].remove(2)
                         self.velocitylattice[randomi, randomj, self.time + 1].append(1)
+                        self.injectedmomentum[self.time + 1] += 2
                     if (4 in self.velocitylattice[randomi, randomj, self.time + 1]) & (3 not in self.velocitylattice[randomi, randomj, self.time + 1]):
                         self.velocitylattice[randomi, randomj, self.time + 1].remove(4)
                         self.velocitylattice[randomi, randomj, self.time + 1].append(3)
+                        self.injectedmomentum[self.time + 1] += 2
                     if (6 in self.velocitylattice[randomi, randomj, self.time + 1]) & (5 not in self.velocitylattice[randomi, randomj, self.time + 1]):
                         self.velocitylattice[randomi, randomj, self.time + 1].remove(6)
                         self.velocitylattice[randomi, randomj, self.time + 1].append(5)
+                        self.injectedmomentum[self.time + 1] += 2
                     if (0 in self.velocitylattice[randomi,randomj, self.time + 1]) & (1 not in self.velocitylattice[randomi,randomj, self.time + 1]):
                         self.velocitylattice[randomi, randomj, self.time + 1].remove(0)
                         self.velocitylattice[randomi, randomj, self.time + 1].append(1)
+                        self.injectedmomentum[self.time + 1] += 1
+
             self.time += 1
         if self.time == self.Totaltime - 1:
+            self.quantitycalculator()
             self.generate_lattice()
+
+    def quantitycalculator(self):
+        for k in range(self.Totaltime):
+            for i in range(self.dim):
+                for j in range(self.dim):
+                    if 1 in self.velocitylattice[i, j, k]:
+                        if self.lattice[i,j,k] >= 0:        #Only contributions from the pore space
+                            self.vxtotal[k] += 1
+                    if 3 in self.velocitylattice[i, j, k]:
+                        if self.lattice[i, j, k] >= 0:
+                            self.vxtotal[k] += 1
+                    if 5 in self.velocitylattice[i, j, k]:
+                        if self.lattice[i, j, k] >= 0:
+                            self.vxtotal[k] += 1
+                    if 2 in self.velocitylattice[i, j, k]:
+                        if self.lattice[i, j, k] >= 0:
+                            self.vxtotal[k] -= 1
+                    if 4 in self.velocitylattice[i, j, k]:
+                        if self.lattice[i, j, k] >= 0:
+                            self.vxtotal[k] -= 1
+                    if 6 in self.velocitylattice[i, j, k]:
+                        if self.lattice[i, j, k] >= 0:
+                            self.vxtotal[k] -= 1
+        print(self.vxtotal)
+        self.vxtotalavg = sum(self.vxtotal)/self.Totaltime
+        print(self.vxtotalavg)
+        self.momentumavg = sum(self.injectedmomentum)/(self.Totaltime - 1)
+        print(self.injectedmomentum)
+        print(self.momentumavg)
+        self.permeability = self.porosity*self.vxtotalavg/self.momentumavg
+        print(self.permeability)
 
     def generate_lattice(self):
         for k in range(self.Totaltime):
