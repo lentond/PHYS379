@@ -3,38 +3,46 @@ import pylab
 import errno
 import os
 import random
+import math
 
 
 class Automata:
 
     def __init__(self):
         self.Totaltime = 20
-        self.dim = 20
+        self.dimstart = 10
+        self.dimfinal = 60
+        self.diminc = 10
+        self.test = 10
         self.flowspeed = 0.5
-        self.scale = 100
-        self.totalsites = int((self.dim ** 2))
-        self.barrierdensity = 1
-        self.fluidparticledensity = 0
-        self.fluidparticlenumber = int(self.fluidparticledensity * self.totalsites)
-        self.barriersites = int(self.barrierdensity * self.totalsites)
-        self.lattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=int)
-        self.velocitylattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=list)
-        self.vxtotal = np.zeros((self.Totaltime), dtype = int)
-        self.injectedmomentum = np.zeros((self.Totaltime), dtype=int)
-        self.porosity = (self.totalsites - self.barriersites)/self.totalsites
-        for i in range(self.dim):
-            for j in range(self.dim):
-                for k in range(self.Totaltime):
-                    self.velocitylattice[i, j, k] = []
+        self.scale = 4
+        self.bdensitystart = 0
+        self.bdensityfinal = 1
+        self.bdensityinc = 0.1
+        self.test = 10
 
-        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Injections'
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/InjectionsScaling'
         self.time = 0
         self.evennextcoordinates = [[0, 0], [1, 0], [-1, 0], [0, 1], [-1, 1], [0, -1], [-1, -1]]
         self.oddnextcoordinates = [[0, 0], [1, 0], [-1, 0], [1, 1], [0, 1], [1, -1], [0, -1]]
 
 
-    def lattice_input(self):
-
+    def lattice_input(self,density,dim):
+        self.dim = dim
+        self.totalsites = int((self.dim ** 2))
+        self.lattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=int)
+        self.velocitylattice = np.zeros((self.dim, self.dim, self.Totaltime), dtype=list)
+        self.vxtotal = np.zeros((self.Totaltime), dtype=int)
+        self.injectedmomentum = np.zeros((self.Totaltime), dtype=int)
+        for i in range(self.dim):
+            for j in range(self.dim):
+                for k in range(self.Totaltime):
+                    self.velocitylattice[i, j, k] = []
+        self.barrierdensity = density
+        self.fluidparticledensity = (1-self.barrierdensity)/2
+        self.fluidparticlenumber = int(self.fluidparticledensity * self.totalsites)
+        self.barriersites = int(self.barrierdensity * self.totalsites)
+        self.porosity = (self.totalsites - self.barriersites) / self.totalsites
         for site in range(self.barriersites):
             randomi = random.randint(0,self.dim - 1)
             randomj = random.randint(0, self.dim - 1)
@@ -116,7 +124,6 @@ class Automata:
             self.time += 1
         if self.time == self.Totaltime - 1:
             self.quantitycalculator()
-            self.generate_lattice()
 
     def quantitycalculator(self):
         for k in range(self.Totaltime):
@@ -141,6 +148,7 @@ class Automata:
                         if self.lattice[i, j, k] >= 0:
                             self.vxtotal[k] -= 1
         #print(self.vxtotal)
+        print(self.barrierdensity)
         self.vxtotalavg = sum(self.vxtotal)/self.Totaltime
         print('The time averaged horizontal velocity is ' + str(self.vxtotalavg))
         self.momentumavg = sum(self.injectedmomentum)/(self.Totaltime - 1)
@@ -148,81 +156,7 @@ class Automata:
         print('The time averaged injected momentum is ' + str(self.momentumavg))
         self.permeability = self.porosity*self.vxtotalavg/self.momentumavg
         print('The permeability is ' + str(self.permeability))
-
-    def generate_lattice(self):
-        for k in range(self.Totaltime):
-            fig = pylab.figure()
-            for i in range(self.dim):
-                for j in range(self.dim):
-                    a = self.lattice[i,j,k]
-                    if a >= 2:
-                        if j % 2 == 0:
-                            pylab.plot([i], [j], '.', color='g')
-                        elif j % 2 == 1:
-                            pylab.plot([i+1/2], [j], '.', color='g')
-                    if a == 1:
-                        if j % 2 == 0:
-                            pylab.plot([i], [j], '.', color='c')
-                        elif j % 2 == 1:
-                            pylab.plot([i+1/2], [j], '.', color='c')
-                    if a == 0:
-                        if j % 2 == 0:
-                            pylab.plot([i], [j], 'x', color='r')
-                        elif j % 2 == 1:
-                            pylab.plot([i + 1 / 2], [j], 'x', color='r')
-                    if a < 0:
-                        if j % 2 == 0:
-                            pylab.plot([i], [j], 'x', color='k')
-                        elif j % 2 == 1:
-                            pylab.plot([i + 1 / 2], [j], 'x', color='k')
-                    if -10 < a < 0:
-                        if j % 2 == 0:
-                            pylab.plot([i], [j], '.', color='c')
-                        elif j % 2 == 1:
-                            pylab.plot([i + 1 / 2], [j], '.', color='c')
-
-                    b = self.velocitylattice[i,j,k]
-
-                    if 1 in b:
-                        if j % 2 == 0:
-                            pylab.arrow(i, j, 1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
-                        elif j % 2 == 1:
-                            pylab.arrow(i + 1/2, j, 1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
-                    if 2 in b:
-                        if j % 2 == 0:
-                            pylab.arrow(i, j, -1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
-                        elif j % 2 == 1:
-                            pylab.arrow(i + 1/2, j, -1, 0, length_includes_head=True, head_width=0.5, head_length=0.4)
-                    if 3 in b:
-                        if j % 2 == 0:
-                            pylab.arrow(i, j, 1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                        elif j % 2 == 1:
-                            pylab.arrow(i + 1/2, j, 1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                    if 4 in b:
-                        if j % 2 == 0:
-                            pylab.arrow(i, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                        elif j % 2 == 1:
-                            pylab.arrow(i + 1/2, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                    if 5 in b:
-                        if j % 2 == 0:
-                            pylab.arrow(i, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                        elif j % 2 == 1:
-                            pylab.arrow(i + 1/2, j, -1/2, 1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                    if 6 in b:
-                        if j % 2 == 0:
-                            pylab.arrow(i, j, -1/2, -1, length_includes_head=True, head_width=0.5, head_length=0.4)
-                        elif j % 2 == 1:
-                            pylab.arrow(i + 1/2, j, -1/2, -1, length_includes_head=True, head_width=0.5, head_length=0.4)
-
-            axes = pylab.gca()
-            axes.set_xlim([-5, self.dim + 5])
-            axes.set_ylim([-5, self.dim + 5])
-            axes.get_xaxis().set_visible(False)
-            axes.get_yaxis().set_visible(False)
-            pylab.title('Filler Title')
-            pylab.show
-            self.check_path_exists(self.visualisation_output)
-            fig.savefig(self.visualisation_output + '/' + str(k) + 'picture.png')
+        self.coordinates = [(1-self.barrierdensity), self.permeability]
 
     def rule(self, vel):
         collisiondict = {'0100000': '0100000', '0010000': '0010000', '0001000': '0001000', '0000100': '0000100',
@@ -328,4 +262,58 @@ class Automata:
                 raise
 
 A = Automata()
-A.lattice_input()
+Coordinates = []
+dimlist = []
+counter = 0
+for dim in np.arange(A.dimstart, A.dimfinal, A.diminc):
+    dimlist.append(dim)
+    for bdensity in np.arange(A.bdensitystart,A.bdensityfinal,A.bdensityinc):
+        Coordinates.append([])
+        samedensitycoords = []
+        for test in range(A.test):
+            A = Automata()
+            A.lattice_input(bdensity,dim)
+            samedensitycoords.append(A.coordinates)
+        sum1 = 0
+        sum2 = 0
+        for i in range(len(samedensitycoords)):
+            sum1 += samedensitycoords[i][0]
+            sum2 += samedensitycoords[i][1]
+        avg1 = sum1/len(samedensitycoords)
+        avg2 = sum2/len(samedensitycoords)
+        Coordinates[counter].append([avg1,avg2])
+    counter+=1
+
+fig = pylab.figure()
+colourcounter = 0
+colourlist = ['b','g','r','c','m','y','k','w']
+for list in Coordinates:
+    for i in range(len(list)):
+        if i == 0:
+            pylab.plot([math.log(list[i][0])], [math.log(list[i][1])], 'x', color=colourlist[colourcounter%7], label=dimlist[colourcounter])
+        else:
+            pylab.plot([math.log(list[i][0])], [math.log(list[i][1])], 'x', color=colourlist[colourcounter % 7])
+    colourcounter += 1
+pylab.legend(loc=0, fontsize=10.5, handletextpad=0.1)
+axes = pylab.gca()
+pylab.title('log-log plot')
+pylab.show
+A.check_path_exists(A.visualisation_output)
+fig.savefig(A.visualisation_output + '/' + 'logpicture.png')
+
+fig = pylab.figure()
+colourcounter = 0
+for list in Coordinates:
+    for i in range(len(list)):
+        if i == 0:
+            pylab.plot([list[i][0]], [list[i][1]], 'x', color=colourlist[colourcounter%7], label=dimlist[colourcounter])
+        else:
+            pylab.plot([list[i][0]], [list[i][1]], 'x', color=colourlist[colourcounter % 7])
+    colourcounter += 1
+pylab.legend(loc=0, fontsize=10.5, handletextpad=0.1)
+axes = pylab.gca()
+pylab.title('Normal Plot')
+pylab.show
+A.check_path_exists(A.visualisation_output)
+fig.savefig(A.visualisation_output + '/' + 'normalpicture.png')
+

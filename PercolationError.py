@@ -3,31 +3,38 @@ import random
 import pylab
 import os
 import errno
+import statistics
 
 class Percolation:
     def __init__(self):
-        self.dim = 20
-        self.density = 0.697
-        self.lattice = np.zeros((self.dim, self.dim), dtype=int)
-        self.totalsites = int((self.dim ** 2) * self.density)
-        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/Percolation'  # Change to route where you want the pictures to be saved
+        self.density = 0.7
+        self.dimstart = 50
+        self.dimfinal = 500
+        self.diminc = 30
+        self.test = 10
+        self.repeats = 10
+        self.successes = 0
+        self.visualisation_output = '/Users/DanLenton/Downloads/PHYS379/Pictures/PercolationError'  # Change to route where you want the pictures to be saved
         self.evennextcoordinates = [[1, 0], [-1, 0], [0, 1], [-1, 1], [0, -1], [-1, -1]]
         self.oddnextcoordinates = [[1, 0], [-1, 0], [1, 1], [0, 1], [1, -1], [0, -1]]
 
-    def distribution(self):
+    def distribution(self, dim, testnumber):
+        self.testnumber = testnumber
+        self.lattice = np.zeros((dim, dim), dtype=int)
+        self.totalsites = int((dim ** 2) * self.density)
         for site in range(self.totalsites):
-            randomi = random.randint(0,self.dim - 1)
-            randomj = random.randint(0, self.dim - 1)
+            randomi = random.randint(0, dim - 1)
+            randomj = random.randint(0, dim - 1)
             self.lattice[randomi,randomj] = 1
-        self.generate_lattice()
+        self.clusters(dim)
 
-    def clusters(self):
+    def clusters(self,dim):
 
         self.cluster = []
         neighbour = 0
         counter = 0
-        for i in range(self.dim):   # Iterating over every site in the lattice
-            for j in range(self.dim):
+        for i in range(dim):   # Iterating over every site in the lattice
+            for j in range(dim):
                 if self.lattice[i,j] == 1:
                     self.cluster.append([[i,j]])
                     self.lattice[i,j] -= 1
@@ -77,68 +84,7 @@ class Percolation:
         #print(self.cluster)
         self.generate_clusters()
 
-
-    def generate_lattice(self): # Produces a picture of the lattice using matplotlib.pyplot
-
-        fig = pylab.figure()
-        for i in range(self.dim):   # Iterating over every site in the lattice
-            for j in range(self.dim):
-                a = self.lattice[i,j]
-                if j % 2 == 0:
-                    if a == 1:
-                        pylab.plot([i], [j], 'x', color='r')    # Occupied sites are blue circles
-                    if a == 0:
-                        pylab.plot([i], [j], '.', color='c')    # Unoccupied sites are red crosses
-                elif j % 2 == 1:
-                    if a == 1:
-                        pylab.plot([i + 1/2], [j], 'x', color='r')    # Occupied sites are blue circles
-                    if a == 0:
-                        pylab.plot([i + 1/2], [j], '.', color='c')    # Unoccupied sites are red crosses
-
-        axes = pylab.gca()
-        axes.set_xlim([-5, 25])
-        axes.set_ylim([-5, 25])
-        axes.get_xaxis().set_visible(False)
-        axes.get_yaxis().set_visible(False)
-        pylab.title('Percolation')
-        pylab.show
-        self.check_path_exists(self.visualisation_output)
-        fig.savefig(self.visualisation_output + '/' + 'picture.png')   # Saves picture
-        self.clusters()
-
     def generate_clusters(self): # Produces a picture of the lattice using matplotlib.pyplot
-
-        fig = pylab.figure()
-        colourcounter = 0
-        for cluster in self.cluster:   # Iterating over every site in the lattice
-            print(cluster)
-            colourlist = ['b', 'g', 'r', 'c', 'm', 'y']
-            if len(cluster) > 8:
-                for point in cluster:
-                    if point[1] % 2 == 0:
-                        pylab.plot(point[0], point[1], 'x', color=colourlist[colourcounter])
-                        print(colourcounter)
-                    elif point[1] % 2 == 1:
-                        pylab.plot(point[0] + 1/2, point[1], 'x', color=colourlist[colourcounter])
-                        print(colourcounter)
-                colourcounter += 1
-            else:
-                for point in cluster:
-                    if point[1] % 2 == 0:
-                        pylab.plot(point[0], point[1], 'x', color='k')
-                    elif point[1] % 2 == 1:
-                        pylab.plot(point[0] + 1/2, point[1], 'x', color='k')
-
-
-        axes = pylab.gca()
-        axes.set_xlim([-5, 25])
-        axes.set_ylim([-5, 25])
-        axes.get_xaxis().set_visible(False)
-        axes.get_yaxis().set_visible(False)
-        pylab.title('Percolation')
-        pylab.show
-        self.check_path_exists(self.visualisation_output)
-        fig.savefig(self.visualisation_output + '/' +'clusterpicture.png')   # Saves picture
 
         for cluster in self.cluster:
             clusterspan = []
@@ -157,27 +103,9 @@ class Percolation:
                     Topedge = True
             if (Rightedge == True and Leftedge == True) or (Bottomedge == True and Topedge == True):
                 self.span = cluster
-                self.spanningcluster()
+                #print('There is a spanning cluster for density = ' + str(self.density) + ' test ' + str(self.testnumber))
+                self.successes += 1
 
-    def spanningcluster(self):  # Produces a picture of the lattice using matplotlib.pyplot
-
-        fig = pylab.figure()
-
-        for point in self.span:
-            if point[1] % 2 == 0:
-                pylab.plot(point[0], point[1], 'x', color='r')
-            if point[1] % 2 == 1:
-                pylab.plot(point[0] + 1/2, point[1], 'x', color='r')
-
-        axes = pylab.gca()
-        axes.set_xlim([-5, 25])
-        axes.set_ylim([-5, 25])
-        axes.get_xaxis().set_visible(False)
-        axes.get_yaxis().set_visible(False)
-        pylab.title('Percolation')
-        pylab.show
-        self.check_path_exists(self.visualisation_output)
-        fig.savefig(self.visualisation_output + '/' + 'spanningpicture.png')
 
     def check_path_exists(self, path):  # Function that checks the save path exists and if not, creates it
         try:
@@ -187,4 +115,60 @@ class Percolation:
                 raise
 
 P = Percolation()
-P.distribution()
+Dimno = (P.dimfinal - P.dimstart)/P.diminc
+Ratio = []
+dimlist = []
+inversedimlist =[]
+for dim in np.arange(P.dimstart,P.dimfinal,P.diminc):
+    dimlist.append(dim)
+    inversedimlist.append(float(1/dim))
+    for repeatnumber in range(P.repeats - 1):
+        P = Percolation()
+        Ratio.append([])
+        listindex = 0
+        for testnumber in range(P.test - 1):
+            P.distribution(dim,testnumber)
+
+        rate = P.successes/P.test
+        Ratio[listindex].append(rate)
+        listindex += 1
+    print(dim)
+print(Ratio)
+
+Ratioavgs = []
+Ratiostddev = []
+for list in Ratio:
+    sum = 0
+    for element in list:
+        sum += element
+        avg = sum/P.repeats
+    Ratioavgs.append(avg)
+    stdev = statistics.stdev(list)
+    Ratiostddev.append(stdev)
+
+fig = pylab.figure()
+for i in range(len(Ratio)):
+    pylab.plot([dimlist[i]], [Ratioavgs[i]], 'x', color='r')    # Occupied sites are blue circles
+    pylab.errorbar([dimlist[i]], [Ratioavgs[i]], yerr=Ratiostddev[i], xerr=None, fmt='', ecolor=None, elinewidth=None, capsize=None,
+                               barsabove=False, lolims=True, uplims=True, xlolims=False, xuplims=False, errorevery=1,
+                               capthick=None, data=None)
+    fig.set_ylabel('Spanning Cluster Success Rate')
+    fig.set_xlabel('Length of Square Lattice Edge')
+    axes = pylab.gca()
+    pylab.title('PercolationScaling')
+    P.check_path_exists(P.visualisation_output)
+    fig.savefig(P.visualisation_output + '/' + 'picture.png')   # Saves picture
+
+fig = pylab.figure()
+for i in range(len(Ratio)):
+    pylab.plot([inversedimlist[i]], [Ratioavgs[i]], 'x', color='r')    # Occupied sites are blue circles
+    pylab.errorbar([dimlist[i]], [Ratioavgs[i]], yerr=Ratiostddev[i], xerr=None, fmt='', ecolor=None, elinewidth=None,
+                   capsize=None,barsabove=False, lolims=True, uplims=True, xlolims=False, xuplims=False, errorevery=1,
+                   capthick=None, data=None)
+
+    axes = pylab.gca()
+    pylab.title('PercolationScalingInverse')
+    fig.set_ylabel('Spanning Cluster Success Rate')
+    fig.set_xlabel('Reciprocal Length of Square Lattice Edge')
+    P.check_path_exists(P.visualisation_output)
+    fig.savefig(P.visualisation_output + '/' + 'inversepicture.png')   # Saves picture
